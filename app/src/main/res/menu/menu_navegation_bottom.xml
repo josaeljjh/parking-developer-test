@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_navigation"
+    >
+
+    <item
+        android:id="@+id/action_check_in"
+        android:icon="@drawable/ic_check_in"
+        android:title="@string/txt_check_in"
+        />
+
+    <item
+        android:id="@+id/action_car_register"
+        android:icon="@drawable/ic_register"
+        android:title="@string/txt_register"
+        />
+
+    <item
+        android:id="@+id/action_check_out"
+        android:icon="@drawable/ic_check_out"
+        android:title="@string/txt_check_out"
+        />
+
+    <item
+        android:id="@+id/action_car_pay"
+        android:icon="@drawable/ic_payment"
+        android:title="@string/txt_pay"/>
+</menu>

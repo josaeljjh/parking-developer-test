@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/checkInFragment"
+    >
+
+    <action
+        android:id="@+id/action_check_in"
+        app:destination="@id/checkInFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"
+        app:launchSingleTop="true"
+        app:popUpTo="@+id/main_navigation"
+        app:popUpToInclusive="true"
+        />
+
+    <action
+        android:id="@+id/action_car_register"
+        app:destination="@id/carRegisterFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:launchSingleTop="true"
+        app:popUpTo="@+id/main_navigation"
+        app:popUpToInclusive="true"
+        />
+
+    <action
+        android:id="@+id/action_check_out"
+        app:destination="@id/checkOutFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:launchSingleTop="true"
+        app:popUpTo="@+id/main_navigation"
+        app:popUpToInclusive="true"
+        />
+
+    <action
+        android:id="@+id/action_car_pay"
+        app:destination="@id/payFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:launchSingleTop="true"
+        app:popUpTo="@+id/main_navigation"
+        app:popUpToInclusive="true"
+        />
+
+    <!-- Entrada -->
+    <fragment
+        android:id="@+id/checkInFragment"
+        android:name="com.prueba.hugo.views.home.check_in.CheckInFragment"
+        android:label="fragment_view_transaction"
+        tools:layout="@layout/fragment_check_in">
+
+
+    </fragment>
+    <!-- Registro -->
+    <fragment
+        android:id="@+id/carRegisterFragment"
+        android:name="com.prueba.hugo.views.home.car_register.CarRegisterFragment"
+        android:label="fragment_view_transaction"
+        tools:layout="@layout/fragment_car_register">
+
+
+    </fragment>
+    <!-- Salida -->
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.prueba.hugo.views.home.check_out.CheckOutFragment"
+        android:label="fragment_view_transaction"
+        tools:layout="@layout/fragment_check_out">
+
+        <action
+            android:id="@+id/car_pay"
+            app:destination="@id/payFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main_navigation"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <!-- Pagar -->
+    <fragment
+        android:id="@+id/payFragment"
+        android:name="com.prueba.hugo.views.home.pay.PayFragment"
+        android:label="fragment_view_transaction"
+        tools:layout="@layout/fragment_pay">
+
+
+    </fragment>
+
+</navigation>

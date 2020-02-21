@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="pay"
+            type="com.prueba.hugo.views.home.pay.PayViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorApp"
+        tools:context="com.prueba.hugo.views.home.check_in.CheckInFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:cardBackgroundColor="@color/colorBlanco"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:layout_constraintBottom_toTopOf="@+id/cardview2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="Tu Factura"
+                    android:textColor="@color/negro_white"
+                    android:textSize="@dimen/_30sdp" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_160sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/corner_shape_blue"
+                    android:backgroundTint="@color/fondoHeader"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_140sdp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        image="@{pay.imageRes, default=@drawable/logo}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/buscarPago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    >
+                    <EditText
+                        android:id="@+id/editPay"
+                        android:layout_width="@dimen/_195sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_border"
+                        android:backgroundTint="@color/colorApp"
+                        android:drawableStart="@drawable/ic_placa"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:hint="@string/n_placa"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapWords|textCapSentences"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:textColor="@color/negro_white"
+                        android:textColorHint="@color/gris"
+                        android:textSize="@dimen/_15sdp"
+                        android:text="@={pay.nPlacaPay}"
+                        />
+
+                    <Button
+                        android:id="@+id/btnCalcular"
+                        style="@style/Button.TextButton"
+                        android:layout_width="@dimen/_195sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:text="Calcular tiempo"
+                        android:textAllCaps="false"
+                        android:onClick="@{()-> pay.validEntry()}"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/containerPlaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="gone"
+                    android:background="@drawable/bg_border"
+                    android:backgroundTint="@color/colorApp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                  >
+
+                    <TextView
+                        android:id="@+id/txtPlaca"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/n_placa"
+                        android:textColor="@color/colorApp"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/nPlacaPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gris"
+                        android:textSize="@dimen/_19sdp"
+                        android:hint="P500-7587"
+                        android:textColorHint="@color/negro_white"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:cardBackgroundColor="@color/colorBlanco"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_timer"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@{pay.time}"
+                    android:textColor="@color/negro_white"
+                    android:textSize="@dimen/_18sdp" />
+
+                <TextView
+                    android:id="@+id/txtDescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@{pay.amount}"
+                    android:textColor="@color/negro_white"
+                    android:textSize="@dimen/_35sdp" />
+
+                <Button
+                    android:id="@+id/btnContinuar"
+                    style="@style/Button.Primary"
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:text="PAGAR"
+                    android:onClick="@{()-> pay.Pay()}"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

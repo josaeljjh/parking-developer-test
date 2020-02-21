@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Parking</string>
+    <string name="continuar">Continuar</string>
+    <string name="descripcion_splash">Esta aplicación es la forma más sencilla \nde pagar su estacionamiento utilizando \nsolo su teléfono inteligente.</string>
+    <string name="bienvenido">¡Bienvenido!</string>
+    <string name="txt_check_in">Ingreso</string>
+    <string name="txt_check_out">Salida</string>
+    <string name="txt_register">Registro</string>
+    <string name="txt_pay">Pagar</string>
+    <string name="n_placa">Nº de Placa</string>
+    <string name="error_plate">Ingresar número de placa.</string>
+    <string name="error_pay">Ingresa el número de placa y calcula el tiempo para poder pagar.</string>
+    <string name="error_user">Seleccione tipo de usuario.</string>
+
+
+    <string name="registrar_usuario">Registrar usuario</string>
+    <string name="ingreso">Ingresar vehiculo</string>
+    <string name="registrar_salida">Registrar salida</string>
+    <string name="marcar_salida">El vehiculo ya ha ingresado, debe marcar su salida para volver a ingresar.</string>
+    <string name="text_ingreso">Ha ingresado el vehiculo con exito.</string>
+    <string name="no_existe">No existe vehiculo registrado a ese número de placa.</string>
+    <string name="ya_existe">Ya existe vehiculo registrado a ese número de placa.</string>
+    <string name="regristro">Se ha registrado el vehiculo con exito.</string>
+    <string name="error_registro">Error al registrar el vehiculo.</string>
+    <string name="text_exit">Se ha registrado salida del vehiculo con exito.</string>
+    <string name="pago_exitoso">Se realizo pago correctamente.</string>
+    <string name="pago_fallido">Hubo un error al realizar el pago.</string>
+    <string name="pago_salida">Debe registrar su salida para poder pagar.</string>
+    <string name="salida">El vehiculo debe ingresar primero para poder marcar su salida.</string>
+
+
+</resources>

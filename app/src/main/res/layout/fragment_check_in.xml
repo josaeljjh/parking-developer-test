@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="checkin"
+            type="com.prueba.hugo.views.home.check_in.CheckInViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.prueba.hugo.views.home.check_in.CheckInFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/colorHeader"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@color/black_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgHeader"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toBottomOf="@+id/colorHeader"
+                image="@{checkin.imageRes, default=@drawable/cars_header_green}"
+                />
+
+            <View
+                android:id="@+id/colorFooter2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/ic_header_black"
+                android:backgroundTint="@color/colorApp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHeader" />
+
+            <View
+                android:id="@+id/colorFooter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/ic_header_black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHeader" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/colorHeader">
+
+                <TextView
+                    android:id="@+id/txtHora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Hora"
+                    android:textColor="@color/colorApp"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextClock
+                    android:id="@+id/hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="11:00 AM"
+                    android:textColor="@color/gris"
+                    android:textSize="@dimen/_19sdp"
+                    android:format12Hour="h:mm aa"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHeader">
+
+                <TextView
+                    android:id="@+id/txtPlaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/n_placa"
+                    android:textColor="@color/colorApp"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/nPlaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@={checkin.textNPlaca}"
+                    android:textColor="@color/gris"
+                    android:textSize="@dimen/_19sdp"
+                    android:hint="P500-7587"
+                    android:textColorHint="@color/gris"
+                    />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/colorBlanco"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_3sdp">
+
+                <EditText
+                    android:id="@+id/edittEquipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/ic_placa"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="@string/n_placa"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:textColor="@color/gris"
+                    android:textColorHint="@color/gris"
+                    tools:ignore="MissingConstraints"
+                    android:text="@={checkin.textNPlaca}"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnEntry"
+                style="@style/Button.Second"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/ingreso"
+                android:onClick="@{()-> checkin.validEntry()}"
+                android:textAllCaps="false"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

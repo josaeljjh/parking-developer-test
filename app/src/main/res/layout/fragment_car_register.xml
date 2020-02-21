@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="carregister"
+            type="com.prueba.hugo.views.home.car_register.CarRegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.prueba.hugo.views.home.car_register.CarRegisterFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/colorHeader"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@color/black_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgRegister"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toBottomOf="@+id/colorHeader"
+                image="@{carregister.imageRes, default=@drawable/cars_header_red}"
+                />
+
+            <View
+                android:id="@+id/colorFooter2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/ic_header_black"
+                android:backgroundTint="@color/colorRed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgRegister" />
+
+            <View
+                android:id="@+id/colorFooter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/ic_header_black"
+                android:backgroundTint="@color/black_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgRegister" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/colorHeader">
+
+                <TextView
+                    android:id="@+id/txtHora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Hora"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextClock
+                    android:id="@+id/hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:format12Hour="h:mm aa"
+                    android:text="11:00 AM"
+                    android:textColor="@color/gris"
+                    android:textSize="@dimen/_19sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgRegister"
+
+                >
+
+                <TextView
+                    android:id="@+id/txtPlaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/n_placa"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/nPlaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="P500-7587"
+                    android:text="@={carregister.nPlacaRegister}"
+                    android:textColor="@color/gris"
+                    android:textColorHint="@color/gris"
+                    android:textSize="@dimen/_19sdp" />
+
+                <TextView
+                    android:id="@+id/txtTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Tiempo"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/txtTme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@={carregister.tiempo}"
+                    android:textColor="@color/gris"
+                    android:textSize="@dimen/_19sdp" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Tipo de usuario"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/selector"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/selector"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:checkedButton="@+id/offer"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:onCheckedChanged="@{carregister.onSplitTypeChanged}"
+                >
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/checkOfficial"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_bg"
+                    android:button="@null"
+                    android:checked="false"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="Oficial"
+                    android:textColor="@drawable/selector_txt" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/checkResident"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_bg"
+                    android:button="@null"
+                    android:checked="false"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="Residente"
+                    android:textColor="@drawable/selector_txt" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/checkNoResident"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1.1"
+                    android:background="@drawable/selector_bg"
+                    android:button="@null"
+                    android:checked="false"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="No Residente"
+                    android:textColor="@drawable/selector_txt" />
+            </RadioGroup>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/colorBlanco"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_3sdp">
+
+                <EditText
+                    android:id="@+id/edittEquipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/ic_placa"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="@string/n_placa"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:text="@={carregister.nPlacaRegister}"
+                    android:textColor="@color/gris"
+                    android:textColorHint="@color/gris"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnRegisterUser"
+                style="@style/Button.Second"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/registrar_usuario"
+                android:onClick="@{()-> carregister.validEntry()}"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
