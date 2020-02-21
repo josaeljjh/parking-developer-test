@@ -15,6 +15,7 @@ parking-developer-test es un proyecto de informacion y pruebas a partir de la so
 * [Lifecycle] - Frameworks para manejo de los estado de vida de la aplicacion
 * [Coroutines] - Frameworks para el uso de peticiones y uso debido de recursos en 2 plano
 * [Realm] - Libreria de persistencia de datois NoSQL
+* [SDP] - Libreria de dimensión de pantallas
 
 parking-developer-test requires SDK Android actualizado, Gradle 3.5.3 o superior y Android Studio 3.5.2.
 
