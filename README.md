@@ -3,7 +3,7 @@ proyecto de prueba con arquitectura MVVM + Repositorio, DataBinding y Koin como 
 
 parking-developer-test es un proyecto de informacion y pruebas a partir de la solucion a una administracion de parqueos no automatizados.
 
-# Que puedo encontrar!
+# ¡Que puedo encontrar!
 
   * Herramienta de administracion de parqueos
   * creacion de usuarios y control de tiempos
